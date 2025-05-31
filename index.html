@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Informasi Kelulusan</title>
   <style>
     body {
@@ -22,10 +22,17 @@
       max-width: 600px;
       width: 100%;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      text-align: center; /* supaya konten di dalam box rata tengah */
+    }
+
+    .logo {
+      max-width: 120px;
+      height: auto;
+      margin: 0 auto 16px auto;
+      display: block;
     }
 
     h2 {
-      text-align: center;
       color: #1e88e5;
       margin-bottom: 24px;
     }
@@ -58,6 +65,7 @@
       padding: 20px;
       background: #f9fafc;
       border-left: 4px solid #2196f3;
+      text-align: left; /* kembalikan teks hasil ke kiri */
     }
 
     .not-found {
@@ -77,8 +85,11 @@
 </head>
 <body>
   <div class="box">
+    <!-- Logo Sekolah -->
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEheKoTHBK5gyjqdWLJAqabmiT4p6Faj2ioWkeIkyFEcewIQeGzXUcmTe068xKR5OFCWNHqiY7_wy8BvJ0naehvD8W-e0nmzc4Ve9Z2LhaCFtyApAt1mmis_U-eRONlwzJeiXymVyD6BgfRGW2czOdIbkggwVbYUVUl1CVJsimI6W-cP7gziSMCnBka-FqUB/s200/69987-removebg-preview-removebg-preview.png" alt="Logo Sekolah" class="logo" />
+
     <h2>📋 Cek Informasi Kelulusan</h2>
-    <input type="text" id="nipdInput" placeholder="Masukkan NIPD">
+    <input type="text" id="nipdInput" placeholder="Masukkan NIPD" />
     <button onclick="cekKelulusan()">Tampilkan Informasi</button>
     <div id="hasilKelulusan"></div>
   </div>
