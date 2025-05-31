@@ -92,14 +92,14 @@
 
   <script>
     const dataSiswa = {
-      "192001002": { nama: "DANIL ADITIA NUGRAHA", nilai: 759.00, rata2: 75.90, keterangan: "LULUS" },
-      "192001003": { nama: "DEDE IQBAL SAEPUDIN", nilai: 759.95, rata2: 76.00, keterangan: "LULUS" },
-      "192001006": { nama: "RESTY NURUL FADILAH", nilai: 814.75, rata2: 81.48, keterangan: "LULUS" },
-      "192001007": { nama: "REVA AGUSTIN", nilai: 804.20, rata2: 80.42, keterangan: "LULUS" },
-      "192001008": { nama: "REVA NURHASANAH", nilai: 816.95, rata2: 81.70, keterangan: "LULUS" },
-      "192001009": { nama: "RIFAN MAULANA", nilai: 761.90, rata2: 76.19, keterangan: "LULUS" },
-      "192001010": { nama: "SAREHAN RAHAYU", nilai: 789.35, rata2: 78.94, keterangan: "LULUS" },
-      "192001011": { nama: "TIARA MEILANI", nilai: 771.35, rata2: 77.14, keterangan: "LULUS" }
+      "192001002": { nama: "DANIL ADITIA NUGRAHA", nilai: "759.00", rata2: "75.90", keterangan: "LULUS" },
+      "192001003": { nama: "DEDE IQBAL SAEPUDIN", nilai: "759.95", rata2: "76.00", keterangan: "LULUS" },
+      "192001006": { nama: "RESTY NURUL FADILAH", nilai: "814.75", rata2: "81.48", keterangan: "LULUS" },
+      "192001007": { nama: "REVA AGUSTIN", nilai: "804.20", rata2: "80.42", keterangan: "LULUS" },
+      "192001008": { nama: "REVA NURHASANAH", nilai: "816.95", rata2: "81.70", keterangan: "LULUS" },
+      "192001009": { nama: "RIFAN MAULANA", nilai: "761.90", rata2: "76.19", keterangan: "LULUS" },
+      "192001010": { nama: "SAREHAN RAHAYU", nilai: "789.35", rata2: "78.94", keterangan: "LULUS" },
+      "192001011": { nama: "TIARA MEILANI", nilai: "771.35", rata2: "77.14", keterangan: "LULUS" }
     };
 
     function cekKelulusan() {
@@ -116,25 +116,36 @@
             <h3 class="center">SURAT KETERANGAN KELULUSAN</h3>
             <p class="center">Nomor: 400.3.11.1/70-SD/2025</p>
 
-            <p>Yang bertanda tangan di bawah ini Kepala SDN 1 Mekarwangi</p>
+            <p>Yang bertanda tangan di bawah ini:</p>
+            <table>
+              <tr><td>Nama</td><td>: Tasripin, S.Pd.SD</td></tr>
+              <tr><td>NIP</td><td>: 198505082014091001</td></tr>
+              <tr><td>Jabatan</td><td>: Kepala Sekolah</td></tr>
+            </table>
+
             <p>Menerangkan bahwa:</p>
             <table>
-              <p>Nama</p><p>: <strong>${siswa.nama}</strong></p>
-              <p>NIPD</p><p>: ${nipd}</p>
-              <p>Jumlah Nilai</p><p>: ${siswa.nilai}</p>
-              <p>Rata-rata Nilai</p><p>: ${siswa.rata2}</p>
+              <tr><td>Nama</td><td>: <strong>${siswa.nama}</strong></td></tr>
+              <tr><td>NIPD</td><td>: ${nipd}</td></tr>
+              <tr><td>Jumlah Nilai</td><td>: ${siswa.nilai}</td></tr>
+              <tr><td>Rata-rata Nilai</td><td>: ${siswa.rata2}</td></tr>
+              <tr><td>Keterangan</td><td>: <strong>${siswa.keterangan}</strong></td></tr>
             </table>
 
             <p>Telah menyelesaikan seluruh program pembelajaran dan dinyatakan <strong>${siswa.keterangan}</strong> dari Satuan Pendidikan SDN 1 Mekarwangi Tahun Pelajaran 2024/2025.</p>
-            <p>Demikian surat keterangan ini dibuat untuk dapat digunakan sebagaimana mestinya.</p>
+
+            <p>Demikian surat keterangan sementara ini dibuat untuk dapat digunakan sebagaimana mestinya.</p>
+
             <p class="catatan">
               🔔 Catatan: File asli Surat Keterangan Lulus, Rapor dan Ijazah akan diserahkan pada saat perpisahan Kelas VI Tahun 2025.
             </p>
 
             <div class="center" style="margin-top: 40px;">
-              <p>Garut, 2 Juni 2025</p>
+              <p>Mekarwangi, 2 Juni 2025</p>
               <p>Kepala Sekolah</p>
+              <br>
               <p>TTD</p>
+		<br>
 		<p><strong>Tasripin, S.Pd.SD</strong></p>
               <p>NIP. 198505082014091001</p>
             </div>
