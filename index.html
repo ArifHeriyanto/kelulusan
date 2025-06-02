@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -5,190 +6,132 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Informasi Kelulusan</title>
   <style>
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background: #f0f4f8;
-      margin: 0;
-      padding: 30px 20px;
-      display: flex;
-      justify-content: center;
-      min-height: 100vh;
-    }
-
-    .box {
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 600px;
-      width: 100%;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    .logo {
-      max-width: 120px;
-      height: auto;
-      margin: 0 auto 16px auto;
-      display: block;
-    }
-
-    h2 {
-      color: #1e88e5;
-      margin-bottom: 24px;
-    }
-
-    input, button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      font-size: 16px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-    }
-
-    button {
-      background-color: #1e88e5;
-      color: white;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background-color: #1565c0;
-    }
-
-    .result {
-      margin-top: 24px;
-      padding: 20px;
-      background: #f9fafc;
-      border-left: 4px solid #2196f3;
-      text-align: left;
-    }
-
-    .not-found {
-      margin-top: 24px;
-      color: red;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .note {
-      margin-top: 20px;
-      font-size: 14px;
-      color: #d63384;
-      font-style: italic;
-    }
-
-    .download-link {
-      display: inline-block;
-      margin-top: 16px;
-      background-color: #1e88e5;
-      color: white;
-      padding: 12px 20px;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-
-    .download-link:hover {
-      background-color: #1565c0;
-    }
+    body {font-family: "Segoe UI", sans-serif; background: #f0f4f8; margin: 0; padding: 30px 20px; display: flex; justify-content: center; min-height: 100vh;}
+    .box {background: #fff; padding: 30px; border-radius: 12px; max-width: 600px; width: 100%; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); text-align: center;}
+    .logo {max-width: 120px; height: auto; margin: 0 auto 16px auto; display: block;}
+    h2 {color: #1e88e5; margin-bottom: 24px;}
+    input, button {width: 100%; padding: 12px; margin-top: 10px; font-size: 16px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box;}
+    button {background-color: #00FF00; color: white; font-weight: bold; border: none; cursor: pointer; transition: background 0.3s;}
+    button:hover, .download-link:hover {background-color: #0000FF;}
+    .result {margin-top: 24px; padding: 20px; background: #f9fafc; border-left: 4px solid #2196f3; text-align: left;}
+    .not-found {margin-top: 24px; color: red; font-weight: bold; text-align: center;}
+    .note {margin-top: 20px; font-size: 14px; color: #d63384; font-style: italic;}
+    .download-link {display: inline-block; margin-top: 16px; background-color: #000000; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; font-weight: bold; cursor: pointer;}
   </style>
 </head>
 <body>
   <div class="box">
-    <!-- Logo Sekolah -->
     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEheKoTHBK5gyjqdWLJAqabmiT4p6Faj2ioWkeIkyFEcewIQeGzXUcmTe068xKR5OFCWNHqiY7_wy8BvJ0naehvD8W-e0nmzc4Ve9Z2LhaCFtyApAt1mmis_U-eRONlwzJeiXymVyD6BgfRGW2czOdIbkggwVbYUVUl1CVJsimI6W-cP7gziSMCnBka-FqUB/s200/69987-removebg-preview-removebg-preview.png" alt="Logo Sekolah" class="logo" />
-
     <h2>🔍 Informasi Kelulusan</h2>
     <p>Masukkan <strong>NIPD</strong></p>
     <input type="text" id="nipdInput" placeholder="Contoh: 192001002">
     <button onclick="cekKelulusan()">Tampilkan Informasi</button>
     <div id="hasilKelulusan"></div>
   </div>
-
   <script>
     const dataSiswa = {
-      "192001002": {
-        nama: "DANIL ADITIA NUGRAHA",
-        ttl: "Garut, 13 Juli 2012",
-        nilai: "75,90",
-        status: "LULUS",
-        skl: "https://drive.google.com/uc?export=download&id=1zUsYNOfUKXQCLgqwaTrkFvmscagP3DSU"
-      },
-      "192001003": {
-        nama: "DEDE IQBAL SAEPUDIN",
-        ttl: "Garut, 25 Januari 2013",
-        nilai: "76,00",
-        status: "LULUS",
-        skl: "https://drive.google.com/uc?export=download&id=1ynrvimIWLQc6MtqPnb0u0recsNEWbVd4"
-      },
-      "192001006": {
-        nama: "RESTY NURUL FADILAH",
-        ttl: "Garut, 25 Maret 2013",
-        nilai: "81,48",
-        status: "LULUS",
-        skl: "https://drive.google.com/uc?export=download&id=1zObv1pVKuYwuJlnUsR7app4c5dwweqil"
-      },
-      "192001007": {
-        nama: "REVA AGUSTIN",
-        ttl: "Garut, 27 Agustus 2012",
-        nilai: "80,42",
-        status: "LULUS",
-        skl: "https://drive.google.com/uc?export=download&id=1trRbigQ7LRPoybg6eQ_Na_82Ffj5TOKf"
-      },
-      "192001008": {
-        nama: "REVA NURHASANAH",
-        ttl: "Garut, 14 Januari 2013",
-        nilai: "81,70",
-        status: "LULUS",
-        skl: "https://drive.google.com/uc?export=download&id=13_5ag5oeshgPeADYwM171on8lM0YBcIk"
-      },
-      "192001009": {
-        nama: "RIFAN MAULANA",
-        ttl: "Garut, 9 April 2012",
-        nilai: "76,19",
-        status: "LULUS",
-        skl: "https://drive.google.com/uc?export=download&id=1ypFWwqwFc1B3MbZ2WLVDzTeMoJoHJLeE"
-      },
-      "192001010": {
-        nama: "SAREHAN RAHAYU",
-        ttl: "Garut, 6 Februari 2012",
-        nilai: "78,94",
-        status: "LULUS",
-        skl: "https://drive.google.com/uc?export=download&id=1QCGxtgE5YdGdHMJkeVN3X00QkFpXlAEV"
-      },
-      "192001011": {
-        nama: "TIARA MEILANI",
-        ttl: "Garut, 22 Mei 2013",
-        nilai: "77,14",
-        status: "LULUS",
-        skl: "https://drive.google.com/uc?export=download&id=1A2STr6QRK-9wxL5VbDt0ly1mp7mYQfBV"
-      }
-    };
+  "192001002": {
+    "nama": "DANIL ADITIA NUGRAHA",
+    "ttl": "Garut, 13 Juli 2012",
+    "nilai": "75,90",
+    "status": "LULUS",
+    "skl": "https://drive.google.com/uc?export=download&id=1RhRtRargPCAXcVX0FyPFzRJX2DVQJBU2",
+    "foto": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEw1HcrQdyNFxowOVupIcJb9ni6tYXBZeyZ_TSqyZmG2I-CJiK7b3fZ7fq_Dnt5XPOonGixinPosXzB4CE_1roKmQ3ae9p8G14O2fkrhU8luTiWGXlGtYqtL3hksOAw8yeuD67IJbee0bA3aBlzKNK4eMdsd5cCTo_W0ibuhzhqnBwUd9_rpO61y5kaGfk/s320/Danil%20HP.jpg"
+  },
+  "192001003": {
+    "nama": "DEDE IQBAL SAEPUDIN",
+    "ttl": "Garut, 25 Januari 2013",
+    "nilai": "76,00",
+    "status": "LULUS",
+    "skl": "https://drive.google.com/uc?export=download&id=1Cam8mLEDufAdxm1pGEYDC9i37-PcMimI",
+    "foto": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiukrCPcw4pfCV8qPE_emZBgRy8iWFaXYt11dOsGqP0MSho8PsV56GdC1XnRmnmeLF6frhpil4rapxo4P1nc4LSL33wzlqjwii2hBr39X7bCOxmBB6EwpYboF0IQRPLi9dvKmga9DZgz7codTHZmqe5uUyI8s-nng49_3qSpbA4vY_kyJpgIJpk3rQbCjfg/s320/Dede%20Iqbal%20HP.jpg"
+  },
+  "192001006": {
+    "nama": "RESTY NURUL FADILAH",
+    "ttl": "Garut, 25 Maret 2013",
+    "nilai": "81,48",
+    "status": "LULUS",
+    "skl": "https://drive.google.com/uc?export=download&id=1Nm7HEu1PhNSWis0hp5a7Pcf68L-okYvd",
+    "foto": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEimeP_ydf7idC1mM5wDL_glXYsDFXaAedjTFz6Mu010O6cprN8yJVdEdlATzX4oP833pdjTXjrT1BNQZiywSGhHxIXjk6g5mzsb2cuu9RZWDKdqFmtau3jh3321L-5EiY4xoviz6FxXpplkKvsBpLFMReWa_zdaZ4AfoAHMz0TFhNlYwRbE0WzcRdNsRgaI/s320/Resty%20HP.jpg"
+  },
+  "192001007": {
+    "nama": "REVA AGUSTIN",
+    "ttl": "Garut, 27 Agustus 2012",
+    "nilai": "80,42",
+    "status": "LULUS",
+    "skl": "https://drive.google.com/uc?export=download&id=1P1ym1-s-PqQ_IgjoZdUI9QGCPOarRo6r",
+    "foto": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcvcy2vBrBvpiOucZ7DPU8tZeBuxC8xRrBkwDWi1i1D_siF5et-bDVxuFBXu9LifZEu2D3_rm6UIpjzmDzyWw-M4cP1cN9LAI0BNYmsZo1y4XvbCB7pzsRchyphenhyphenXfIntRy8Fj98vF20FNDRiV3Otj7GZbL1-k1V1QTlOljbBtcKRqWeeMXfY7Ac054Oty7ov/s320/Reva%20Agustin%20HP.jpg"
+  },
+  "192001008": {
+    "nama": "REVA NURHASANAH",
+    "ttl": "Garut, 14 Januari 2013",
+    "nilai": "81,70",
+    "status": "LULUS",
+    "skl": "https://drive.google.com/uc?export=download&id=1YM0KoZgaxlhNiTkBMIfvr_DpLiMQHp3F",
+    "foto": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjuxGkAP243Y7F4Z2CzhemMo2m-orLwnlaYRlD1jOSqo7JJRATuvgc3he49XXVEzrDDRRH0kBPV4AskhUzotf3S3FvLB_X_yrWzMVOU1IpO23o0-n8Ep054xp9G7jycKt5FKS-893uoxoDo8snFbwXyFDrOo5J97Puf535-svVKDEzoyUBupQg-FMIujsXI/s320/Reva%20Nurhasanah%20HP.jpg"
+  },
+  "192001009": {
+    "nama": "RIFAN MAULANA",
+    "ttl": "Garut, 9 April 2012",
+    "nilai": "76,19",
+    "status": "LULUS",
+    "skl": "https://drive.google.com/uc?export=download&id=1338NN9rp9FSBSKK4AO1lUBsbN8gET4Cj",
+    "foto": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCBD7KgiSpeufZ2pV8AwXs94JSOHwORo5br_stHDSHWdj6mKVYstsbhFwC-8Ar5tBxN0iSNElgMUgK7vkgiuMwGelZ-lUJrBSe0OfF9HNJpcGbvcTitOOTnwq6FWDrncdhdzPfKtss8mUvC4oyjYBb53jLn2JV0G5ch2VzKNC3_MqdS97EPbTJmLQcBaRI/s320/Rifan%20HP.jpg"
+  },
+  "192001010": {
+    "nama": "SAREHAN RAHAYU",
+    "ttl": "Garut, 6 Februari 2012",
+    "nilai": "78,94",
+    "status": "LULUS",
+    "skl": "https://drive.google.com/uc?export=download&id=1MvnrDmLR69KvXNmVLLegVX0Z-h1hMZ3P",
+    "foto": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEib2OGvb-vrej7iVTo9fBz_tOQiPWrwclpHI1GSXgooya_vG8odxLCSZ1fEz5gBwNPG31Svha2VNWqyhCey1dkpkBI03o0QqBP_g6jovkfqy7D4I2Di7aWLCyl3enobmkiUBpPciRpwUZpk-x1LOZDUgox8KxKTvKqJcrs6SxK4lrGUBnatxi5rULNe3aIZ/s320/Sarehan%20Rahayu%20HP.jpg"
+  },
+  "192001011": {
+    "nama": "TIARA MEILANI",
+    "ttl": "Garut, 22 Mei 2013",
+    "nilai": "77,14",
+    "status": "LULUS",
+    "skl": "https://drive.google.com/uc?export=download&id=1H82q3WJqJ86XFsPU-QNHTXlcAhFX-oTj",
+    "foto": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiiLB_HECfkyb_tgpEF6gV_w9BMt8bUw86AVk9iW8N9_4gXpzIZvP3pmu2JTFdXeRSa13xRDnuzt48vnBiaxrHpK39ladxOYP-lm-h2RAnuBZsDNuiekn-xxqeXJ_RZU4e37TuGdgqOUrwJO3X5vDuxsJucyrgoVfErSMTVr9fTtYpqF92Ap7HHTKz-rPq-/s320/Tiara%20Meilani%20HP.jpg"
+  }
+};
 
     function cekKelulusan() {
       const nipd = document.getElementById('nipdInput').value.trim();
       const hasil = document.getElementById('hasilKelulusan');
       const siswa = dataSiswa[nipd];
-
       if (siswa) {
         hasil.innerHTML = `
           <div class="result">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj_RWCVcxMO3KqaIoD-AWBn0UM27Bs8vBpTOjvReO8uC8HIWOEcd6RnCSnRaucdjhRQr7goM7AOYZtTXI-_BMGG2nD-IfYOrru2VjLRinyULRGYU9brNUw7Kyf59jQjnwe41r5n0Vm8kTttOeM223-6dIxOWD9eya5uaEX7oroF2JwfFL1T6n-wt6ycAkMu/s320/congratulazioni-gif-congratulations-glitter-611.gif" alt="GIF Selamat" style="width: 120px; border-radius: 12px; margin-bottom: 12px;" />
+            <img src="${siswa.foto}" alt="Foto Siswa" style="width: 100px; border-radius: 12px; margin-bottom: 12px;" />
             <p>👤 Nama: <strong>${siswa.nama}</strong></p>
             <p>🗓️ TTL: ${siswa.ttl}</p>
             <p>🆔 NIPD: ${nipd}</p>
-            <p>📊 N. Rata-rata Kelulusan: <strong>${siswa.nilai}</strong></p>
+            <p>📊 R.Nilai Kelulusan: <strong>${siswa.nilai}</strong></p>
             <p>✅ Status: <strong>${siswa.status}</strong></p>
-            <p class="note">📌 Catatan: File asli <strong>Surat Keterangan Lulus</strong> dapat menghubungi Panitia Kelulusan SDN 1 Mekarwangi mulai tanggal <strong>2 Juni 2025</strong>, sementara Rapor dan Ijazah akan diserahkan pada saat perpisahan Kelas VI Tahun 2025.</p>
-            <a href="${siswa.skl}" target="_blank" class="download-link">⬇️ Unduh Draf SKL</a>
+            <p class="note">📌 Catatan: File asli <strong>Surat Keterangan Lulus</strong> akan diserahkan mulai tanggal <strong>2 Juni 2025</strong> di Kantor SDN 1 Mekarwangi. Rapor dan Ijazah akan diserahkan saat perpisahan kelas VI.</p>
+            <a class="download-link" href="${siswa.skl}" target="_blank">📄 Unduh Scan SKL</a>
+            <a class="download-link" href="https://drive.google.com/uc?export=download&id=19EAoHO7EgPU4ii9IbT-gQJvOqQzQs9UH" target="_blank">🔨 Unduh SK Penetapan</a>
+            <button class="download-link" onclick="tampilkanPesanIjazah()">🎓 Unduh Scan Ijazah</button>
+            <div id="pesanIjazah"></div>
           </div>`;
       } else {
         hasil.innerHTML = `<p class="not-found">❌ NIPD tidak ditemukan. Silakan periksa kembali.</p>`;
       }
+    }
+
+    function tampilkanPesanIjazah() {
+      document.getElementById('pesanIjazah').innerHTML = `
+        <div class="note" style="text-align: center;">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh57VOhFpU38e3bHJoRB_kAUPDPCHYRDbj_ROOjMVjNQTwWBFTE7syTousvjDfWbIZjTh5BTcbyqk4LlcaIZ_FsTQqQV6PSTntemPp5piPK-yuHrfE3h1Iwe8hhH30uKtRoTGGfpMoBLJTtR-BfCcuRWjjv1vC0tWQnwf4BNThdpUx4aPQr1pBY1RfFxd1i/s320/Arif%20H.jpg" alt="Wali Kelas VI" style="width: 120px; border-radius: 12px; margin-bottom: 12px;" /><br>
+          Mohon maaf. Saat ini scan ijazah kamu masih dalam proses.<br><br>
+          <a href="https://wa.me/6281321347594" target="_blank">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjNmrYOOsUR4f6RgVy5c4Q3I1OLNLrx7j-BuUc9F-kQidVYpflFQ6V9mT3Ena42JCbp5uLOZ_6hh7-yNFCnmzrLpXvZe1WaPTh7an1qVHO4z80T-tyDNbWvG_ahxl0emBGj54Ep7Kkzyr8ORBaPM5gO9xHYPIZ5GVwbnr3lJvMvciduQk3bAy4Tex0z3J1A/s320/hubungi-kami.gif" alt="Chat WhatsApp" width="200">
+          </a><br><strong>ATAU</strong><br>
+          Cek secara berkala melalui situs: 
+          <a href="https://arifheriyanto.github.io/kelulusan" target="_blank" style="color: #1e88e5; font-weight: bold;">https://arifheriyanto.github.io/kelulusan</a>
+        </div>`;
     }
   </script>
 </body>
